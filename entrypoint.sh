@@ -39,7 +39,7 @@ else
   do
     echo "Running test with $FILE"
     jmeter -n -t $FILE $@
-    cat jmeter_log.log
+    cat jmeter_log.log >> test_results.jtl
     test_run=$?
     # If any of the previous tests haven't failed
     if [ "$test_run" == "0" ] && [ "$status" == "1" ]
